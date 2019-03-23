@@ -1,19 +1,30 @@
 import * as React from 'react';
-import './App.css';
 
-import logo from './logo.svg';
+import Header from './components/header'
+import Home from './components/tabs/home';
+import About from './components/tabs/about';
+
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 class App extends React.Component {
   public render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+      <div>
+        <Header />
+        <Tabs>
+            <TabList>
+              <Tab>Home</Tab>
+              <Tab>About</Tab>
+            </TabList>
+
+            <TabPanel>
+              <Home />
+            </TabPanel>
+            <TabPanel>
+              <About />
+            </TabPanel>
+          </Tabs>
       </div>
     );
   }
